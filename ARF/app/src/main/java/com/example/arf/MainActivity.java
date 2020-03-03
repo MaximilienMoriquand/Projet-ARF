@@ -3,7 +3,10 @@ package com.example.arf;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.Manifest;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -17,53 +20,25 @@ import com.karumi.dexter.listener.single.PermissionListener;
 
 import me.dm7.barcodescanner.zxing.ZXingScannerView;
 
-public class MainActivity extends AppCompatActivity implements ZXingScannerView.ResultHandler {
+public class MainActivity extends AppCompatActivity  {
     public ZXingScannerView sxscannerview;
     private TextView TxtResult;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        sxscannerview=(ZXingScannerView)findViewById(R.id.zxscan);
-        TxtResult=(TextView)findViewById(R.id.TxtResult);
-        // on demande les permissions à l'utilisateur
-        Dexter.withActivity(this).withPermission(Manifest.permission.CAMERA)
-                .withListener(new PermissionListener()
 
-                // on overide pour permettre de lunch correctment
-                {
-                    @Override
-                    public void onPermissionGranted(PermissionGrantedResponse response) {
-                        Toast.makeText(MainActivity.this,"Bon chient ",Toast.LENGTH_SHORT);
-                        sxscannerview.setResultHandler(MainActivity.this);
-                        sxscannerview.startCamera();
-
-                    }
-
-                    @Override
-                    public void onPermissionDenied(PermissionDeniedResponse response)
-                    {
-                        Toast.makeText(MainActivity.this,"accepte les permissions pd",Toast.LENGTH_SHORT);
-                    }
-
-                    @Override
-                    public void onPermissionRationaleShouldBeShown(PermissionRequest permission, PermissionToken token) {
-
-                    }
-                })
-                .check();
     }
 
-    @Override
-    protected void onDestroy()
-    { // on ferme la camera quand l'activité est stop
-        sxscannerview.stopCamera();
-        super.onDestroy();
-    }
+    /*
+        Le bouton lance l'activité qui scan les codes barres
 
-    @Override
-    public void handleResult(Result rawResult) {
-        // reception des resultats sans traitement
-        TxtResult.setText(rawResult.getText());
+    */
+
+    public void scanner(View view)
+    {
+        Button button =(Button) view;
+        Intent intent = new Intent(MainActivity.this, Scanner.class);
+        startActivity(intent);
     }
 }

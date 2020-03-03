@@ -6,30 +6,11 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-   <me.dm7.barcodescanner.zxing.ZXingScannerView
+   <Button
        android:layout_width="match_parent"
-       android:layout_height="match_parent"
-       android:id="@+id/zxscan"
-       android:layout_above="@+id/result">
-
-   </me.dm7.barcodescanner.zxing.ZXingScannerView>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="8dp"
-        android:id="@+id/result"
-        android:layout_alignParentBottom="true"
-        android:background="@color/colorPrimaryDark"
-
-        >
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:text="..."
-            android:textColor="@android:color/white"
-            android:textSize="24dp"
-            android:gravity="center"
-            android:id="@+id/TxtResult"></TextView>
-    </LinearLayout>
+       android:layout_height="wrap_content"
+       android:id="@+id/Chibre"
+       android:onClick="scanner"
+       android:text="scan a new product"
+       ></Button>
 </RelativeLayout>

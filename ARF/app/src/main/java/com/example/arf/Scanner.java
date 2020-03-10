@@ -20,7 +20,8 @@ import com.karumi.dexter.listener.PermissionRequest;
 import com.karumi.dexter.listener.single.PermissionListener;
 
 import me.dm7.barcodescanner.zxing.ZXingScannerView;
-public class Scanner extends Activity implements ZXingScannerView.ResultHandler {
+
+public class Scanner extends AppCompatActivity implements ZXingScannerView.ResultHandler {
     public ZXingScannerView sxscannerview;
     private TextView TxtResult;
 

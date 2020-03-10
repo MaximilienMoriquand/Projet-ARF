@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">ARF</string>
+    <string name="home">Home</string>
+    <string name="scanner">Scanner</string>
+    <string name="profil">Profil</string>
+    <string name="open_scanner">Open Scanner</string>
 </resources>

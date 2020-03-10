@@ -6,11 +6,18 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-   <Button
+   <FrameLayout
+       android:id="@+id/frag_container"
        android:layout_width="match_parent"
-       android:layout_height="wrap_content"
-       android:id="@+id/Chibre"
-       android:onClick="scanner"
-       android:text="scan a new product"
-       ></Button>
+       android:layout_height="match_parent"
+       android:layout_above="@+id/bottom_nav"/>
+
+   <com.google.android.material.bottomnavigation.BottomNavigationView
+       android:id="@+id/bottom_nav"
+       android:layout_width = "match_parent"
+       android:layout_height = "wrap_content"
+       android:layout_alignParentBottom = "true"
+       app:menu = "@menu/bottom_navigation"
+       android:background = "?android:attr/windowBackground"/>
+
 </RelativeLayout>

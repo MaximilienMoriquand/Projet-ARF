@@ -30,6 +30,6 @@
             android:textColor="@android:color/white"
             android:textSize="24dp"
             android:gravity="center"
-            android:id="@+id/TxtResult"></TextView>
+            android:id="@+id/TxtResult"/>
     </LinearLayout>
 </RelativeLayout>

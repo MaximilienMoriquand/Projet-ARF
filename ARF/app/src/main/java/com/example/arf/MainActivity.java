@@ -68,6 +68,8 @@ public class MainActivity extends AppCompatActivity {
                             break;
                         case R.id.nav_scan:
                             selectedFrag = new ScannerFragment();
+                            /*Intent intent = new Intent(MainActivity.this, Scanner.class);
+                            startActivity(intent);*/
                             break;
                         case R.id.nav_profil:
                             selectedFrag = new ProfilFragment();
